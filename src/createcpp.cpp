@@ -12,8 +12,8 @@ int main(int argc, char **argv) {
     throw invalid_argument("");
 
   templatePath = argv[1];
+  templatePath = "/.cli/templates/" + templatePath + ".cpp";
   templatePath = getenv("HOME") + templatePath;
-  templatePath = "/.cli/templates" + templatePath + ".cpp";
 
   cout << "Using template " << templatePath << '\n';
 
