@@ -6,7 +6,7 @@
 using namespace std;
 
 using i64 = long long;
-vector<i64> dv;
+vector<i64> st, ed;
 
 int main(int argc, char **argv) {
   if (argc != 2)
@@ -19,17 +19,25 @@ int main(int argc, char **argv) {
     if (res % i)
       continue;
 
-    dv.push_back(i);
+    st.push_back(i);
 
     if (res / i == i)
       continue;
-    dv.push_back(res / i);
+
+    ed.push_back(res / i);
   }
 
-  sort(dv.begin(), dv.end());
+  auto stSt = st.begin(), edSt = st.end();
+  while (stSt != edSt) {
+    cout << *stSt << ' ';
+    ++stSt;
+  }
 
-  for (const auto &item : dv)
-    cout << item << ' ';
+  auto stEd = ed.rbegin(), edEd = ed.rend();
+  while (stEd != edEd) {
+    cout << *stEd << ' ';
+    ++stEd;
+  }
 
   cout << '\n';
 }
