@@ -10,9 +10,9 @@ int main(int argc, char **argv) {
     throw invalid_argument("");
 
   cmd = argv[1];
-  cout << "Building " + cmd + ".cpp\n";
+  cout << "Running " + cmd + ".cpp\n";
 
-  system(("g++ " + cmd + ".cpp -o " + cmd).c_str());
+  system(("g++ " + cmd + ".cpp -o " + cmd + "&&./" + cmd).c_str());
 
   return 0;
 }
