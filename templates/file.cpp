@@ -1,9 +1,19 @@
 #include <iostream>
+
+// Defs
 using namespace std;
+using lli = long long;
+using ull = unsigned long long;
+using ld = long double;
 
 #define prepare(file)                                                          \
-  freopen(file ".inp", "r", stdin);                                            \
-  freopen(file ".out", "w", stdout)
+  if (fopen(file ".inp", "r")) {                                               \
+    freopen(file ".inp", "r", stdin);                                          \
+    freopen(file ".out", "w", stdout);                                         \
+  }
+
+// Constants
+constexpr lli N = 1e6, MOD = 1e9 + 7;
 
 // Main solve
 void solve() {}
